@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorry, Akka ❤️</title>
+<style>
+:root {
+  --site-primary: #8c3158;
+  --site-on-primary: #ffffff;
+  --site-secondary: #f8dce5;
+  --site-on-secondary: #542039;
+  --site-background: #fff6f8;
+  --site-on-background: #3f2430;
+  --site-font-body: "Trebuchet MS", Arial, sans-serif;
+  --site-font-heading: Georgia, "Times New Roman", serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--site-font-body); color: var(--site-on-background); }
+#app {
+  min-height: 100vh;
+  width: 100%;
+  border-radius: 0;
+  background-color: var(--site-background);
+  background-image: radial-gradient(circle at 12% 18%, #f8dce5 0, transparent 27%), radial-gradient(circle at 88% 82%, #f2d4e1 0, transparent 25%);
+  display: flex; align-items: center; justify-content: center;
+  padding: calc(24px * var(--site-spacing-scale));
+  position: relative; overflow: hidden;
+}
+.sparkles { position:absolute; inset:0; pointer-events:none; opacity:var(--site-decoration-opacity, 1); }
+.sparkles span { position:absolute; color:#c76a8c; animation: float 6s ease-in-out infinite; }
+.sparkles span:nth-child(1){left:9%;top:13%;font-size:24px}
+.sparkles span:nth-child(2){right:12%;top:19%;font-size:30px;animation-delay:1s}
+.sparkles span:nth-child(3){left:15%;bottom:18%;font-size:20px;animation-delay:2s}
+.sparkles span:nth-child(4){right:10%;bottom:14%;font-size:25px;animation-delay:1.5s}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.card {
+  width:min(100%, 650px); position:relative; z-index:1;
+  background:light-dark(#fffdfd,#2c2027); color:light-dark(#3f2430,#f8eaf0);
+  border:1px solid light-dark(#f0cad8,#5d3b4b);
+  border-radius:calc(28px * var(--site-radius-scale));
+  padding:clamp(26px, 6vw, 54px);
+  box-shadow:0 20px 70px #8c31581c;
+  text-align:center;
+}
+.eyebrow { text-transform:uppercase; letter-spacing:.22em; font-size:11px; font-weight:bold; color:light-dark(#a34e70,#e7a7c0); }
+h1 { font-family:var(--site-font-heading); font-size:calc(clamp(36px,7vw,58px) * var(--site-heading-scale)); font-weight:normal; line-height:1.08; margin:16px 0 10px; }
+.heart { font-size:37px; display:block; margin:4px 0 14px; animation:pulse 1.7s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+.subtitle { color:light-dark(#8d6676,#d9b9c6); font-size:15px; margin:0 auto 25px; line-height:1.6; max-width:440px; }
+button {
+  border:0; cursor:pointer; border-radius:999px; padding:14px 24px; font:600 14px var(--site-font-body);
+  transition:transform .2s, background .2s; margin:5px;
+}
+button:hover { transform:translateY(-2px); }
+.primary { background:var(--site-primary); color:var(--site-on-primary); }
+.secondary { background:var(--site-secondary); color:var(--site-on-secondary); }
+.letter { text-align:left; line-height:1.9; font-size:15px; margin-top:25px; padding:23px; border-radius:18px; background:light-dark(#fff3f7,#392832); border:1px solid light-dark(#f3d6e0,#624455); display:none; white-space:pre-line; }
+.letter.show { display:block; animation:appear .45s ease both; }
+@keyframes appear { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.signature { text-align:right; color:light-dark(#9a4d6b,#e5a5bd); font-family:var(--site-font-heading); font-style:italic; font-size:20px; margin-top:12px; }
+.footer { margin-top:22px; font-size:11px; letter-spacing:.06em; color:light-dark(#a58a96,#c4a4b3); }
+@media(max-width:480px){ .letter{padding:17px;font-size:14px} .card{padding:26px 20px} }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after{animation:none!important;transition:none!important} }
+</style>
+</head>
+<body>
+<main id="app">
+  <div class="sparkles" aria-hidden="true"><span>✦</span><span>♡</span><span>✧</span><span>♡</span></div>
+  <section class="card">
+    <div class="eyebrow">A little message from my heart</div>
+    <h1>Sorry, Akka</h1>
+    <span class="heart" aria-hidden="true">❤️</span>
+    <p class="subtitle">Some words came out wrong, but I never want my words to make you feel less loved.</p>
+    <button class="primary" id="openBtn" type="button">Open my letter 💌</button>
+    <button class="secondary" id="closeBtn" type="button" hidden>Close letter</button>
+    <article class="letter" id="letter" aria-live="polite">
+Akkaaaa ❤️🥺
+
+Nenu neetho thappuga maatlada akka, nijanga nenu ala maatladakudadhu. Aa time lo em alochinchakunda maatladesa, kaani ippudu alochisthe nenu neetho ala maatladatam chaala thappu anipisthundhi.
+
+Nuvvu naa akka vi, nenu neetho inka baaga undaali kaani, nene ninnu hurt chesaanu. Naa maatala valla neeku baadha kaligi unte I'm really really sorry akka. 😔❤️
+
+Nenu thappu chesaanu ani accept chesthunnaaa. Naa thappuni justify cheyyalani kaadhu, ninnu hurt chesinanduku nijanga sorry cheppalani anukuntunna. Nuvvu naaku chaala important eyy, kaani konni sarlu kopam lo maatladetappudu aa vishayam marchipothunna.
+
+First time anukunta neyy nuvvuu unnaa ninnu chikak cheyakunda, ninnuu gelakakundaa, kottakundaa. Nen em chikak loo lenu pandu, clg loo okkadineyy alavtu ayyi intloo kudaa alaney undipothunnaa silent ga antheyy.
+
+Reallyyy Sorryyy pandu 😭😭❤️
+
+Please akka, nannu forgive cheyyi. Nenu maatladina maatalu venakki theesukolekapoyina, naa mistake ni realise ayyi sorry cheppagalanu. Inka ninnu ala hurt cheyyakunda undataniki try chestha. Nuvvu naaku eppatiki special akka. 🫂❤️
+
+Love you so much, pandu. Nenu cheppina sorry ni naa actions tho kuda prove chestha. 🥹❤️
+      <div class="signature">— Nee thammudu ❤️</div>
+    </article>
+    <div class="footer">Made with love, just for you ♡</div>
+  </section>
+</main>
+<script>
+const openBtn = document.getElementById('openBtn');
+const closeBtn = document.getElementById('closeBtn');
+const letter = document.getElementById('letter');
+openBtn.addEventListener('click', () => {
+  letter.classList.add('show');
+  openBtn.hidden = true;
+  closeBtn.hidden = false;
+});
+closeBtn.addEventListener('click', () => {
+  letter.classList.remove('show');
+  openBtn.hidden = false;
+  closeBtn.hidden = true;
+  openBtn.focus();
+});
+</script>
+</body>
+</html>
